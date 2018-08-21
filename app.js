@@ -16,7 +16,7 @@ comments = require("./routes/comments"),
 user = require("./routes/index")
 
 
-mongoose.connect("mongodb://localhost/tials")
+mongoose.connect(process.env.DATABASEURL)
 var app = express()
 app.use(bodyParser.urlencoded({extended:true}))
 app.use(override("_method"))
