@@ -1,0 +1,68 @@
+body {background:black;}
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+  color:white;
+}
+
+.slideshow {
+    list-style-type:none;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+.slideshow li:nth-child(1) { 
+  background-image: url(https://farm6.staticflickr.com/5282/5238074338_3ea04cb070.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://pixabay.com/get/e83cb20d2cf2073ed1584d05fb1d4e97e07ee3d21cac104496f4c97ba2e8b3bd_340.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(http://www.morettisrestaurants.com/MorettisRestaurants/slides/morettis-deep-dish_0034.jpg%22);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://cdn1.medicalnewstoday.com/content/images/articles/314/314819/delicious-buffet-foods.jpg);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://images.indianexpress.com/2018/01/food3.jpg);
+  animation-delay: 40s; 
+}
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
