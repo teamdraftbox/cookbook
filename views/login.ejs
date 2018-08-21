@@ -1,0 +1,22 @@
+<% include ./partials/header %>
+<div class="container" style="position:absolute;
+                              margin-top:100px;
+                              margin-left:450px;">
+        <form action="/login" method="post">
+            <div style="width:30%;;padding-left:10px;">
+                <h2 class="bg-info">Login </h2>
+                <div class="form-group">
+                    <label>Username</label>
+                    <input class="form-control" type="text" name="username">
+                </div>
+                 <div class="form-group">
+                    <label>Password</label>
+                    <input class="form-control" type="password" name="password">
+                </div>
+            </div>
+            <button class="btn btn-info">Submit</button>
+       </form>
+</div>
+
+
+<% include ./partials/footer %>

@@ -1,0 +1,17 @@
+<% include ./partials/header %>
+<div class="container" style="position:absolute;
+                              margin-top:100px;
+                                  margin-left:450px;">
+       <form action="/recipe/<%=id%>/comments/<%=comments._id%>?_method=put" method="post" style="width:30%;;padding-left:10px;">
+           <h2 class="bg-info">Edit Comment</h2>
+           <div class="form-group">
+               <lable>Comments</lable>
+               <input type="text"  class="form-control "name="comments[text]" value="<%=comments.text%>">
+           </div>
+           
+           <button class="btn btn-info">
+               Submit
+           </button>
+       </form>
+</div>
+<% include ./partials/footer %>

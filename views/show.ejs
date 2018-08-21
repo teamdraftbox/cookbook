@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+<div class="container">
+    <div class="row">
+    <div class="col-md-3">
+        <ul class="list-group">
+            <li class="list-group-item  bg-success"><%=recipe.author.username%></li>
+            <li class="list-group-item">created:<%= recipe.date.toDateString()%></li>
+            <li class="list-group-item">Rating:5</li>
+            
+        </ul>
+    </div>
+    <div class="card col-md-9">
+        <img class="card-img-top"src="<%= recipe.image%>">
+        <div class="card-body">
+            <h2 class="card-title"> <%=recipe.site%></h2>
+            <p class="card-text"><%=recipe. discription%></p>
+          
+            <a class="btn btn-success" href="/recipe/<%=recipe._id%>/comments/new">Add Comment</a>
+     <% if (currentUser && recipe.author.id.equals(currentUser._id)){ %>
+              <a class="btn btn-warning" href="/recipe/<%=recipe._id%>/edit">Edit Recipe</a>
+            <form action="/recipe/<%=recipe._id%>?_method=delete" method="post" style="display:inline">
+                 <button class="btn btn-danger">Delete</button>
+            </form>
+    <%  } %>
+        </div>
+        
+        <h2 class="dispaly-4">Comments:</h2>
+           <% recipe.comments.forEach(function(comments){ %>
+            <ul class="list-group list-group-flush">
+             <h5><%=comments.author.username%>:</h3>
+             <li class="list-group-item"><%=comments.text %></li>
+       <% if (currentUser && comments.author.id.equals(currentUser._id)){ %>  
+             <a  class="btn btn-sm btn-info"href="/recipe/<%=recipe._id%>/comments/<%=comments._id%>/edit"  style="width:55px;">Edit</a>
+              <form action="/recipe/<%=recipe._id%>/comments/<%=comments._id%>?_method=delete" method="post" >
+                     <button class="btn btn-sm  btn-danger">Delete</button>
+              </form>
+      <%  } %>
+            </ul>
+        <% }) %>
+     
+            
+    </div>
+</div>
+
+</div>
+
+<% include ./partials/footer %>

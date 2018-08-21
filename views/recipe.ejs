@@ -1,0 +1,33 @@
+<% include ./partials/header %>
+<div class="jumbotron">
+    <h1 class="display-4">Welcome to recipe dairies!!</h1>
+    <p class="lead">Share the love of culinary arts,the language with out barrires</p>
+    <hr>
+    <a class="btn btn-lg btn-success" href="/recipe/new">Add Recipes</a>
+</div>
+<div class="container">
+    <div class="row" style = "display:flex; flex-wrap:wrap;">
+      <% recipe.forEach(function(recipe){%>
+    
+            <div class = "card col-md-3" style="width:18rem; padding-bottom:10px;">
+                <img class = "card-img-top" src = "<%= recipe.image %>" style = "height:300px;">
+                <div class= "card-body">
+                    <h3 class= "card-title"><%=recipe.site %></h3>
+                    <p class="card-text"><%= recipe.discription.substring(0,100)%></p>
+                    <a href="/recipe/<%=recipe._id%>"class= "btn btn-outline-success">More</a>
+                </div>
+                
+            </div>
+            
+        
+        <% }) %>
+     
+          
+
+</div>
+       
+</div>
+
+
+
+<%include ./partials/footer%>
